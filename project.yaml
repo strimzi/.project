@@ -1,0 +1,72 @@
+# .project metadata for Strimzi
+# Documentation: https://github.com/cncf/automation/tree/main/utilities/dot-project
+
+# TODO: Add package_managers if distributed via registries
+
+schema_version: "1.0.0"
+slug: "strimzi"
+name: "Strimzi"
+description: "Apache Kafka running on Kubernetes"
+type: "project"
+project_lead: "scholzj" # TODO: AUTO-DETECTED — please verify
+slack_channels: # TODO: AUTO-DETECTED — please verify the channel(s) below
+  - name: "#strimzi"
+    link: "https://cloud-native.slack.com/messages/strimzi"
+    primary: true
+
+maturity_log:
+  - phase: "incubating"
+    date: "2019-08-28T00:00:00Z"
+    issue: "https://github.com/cncf/toc/pull/939" # TODO: AUTO-DETECTED — please verify
+
+repositories: # TODO: AUTO-DETECTED primary — please verify
+  - url: "https://github.com/strimzi/strimzi-kafka-operator"
+    primary: true
+    # tags: [core, sig-apps] # Optional
+
+website: "https://strimzi.io/"
+
+artwork: "https://landscape.cncf.io/logos/strimzi.svg"
+
+adopters:
+  path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/ADOPTERS.md"
+
+
+# TODO: Add package manager identifiers if your project is distributed via registries
+# package_managers:
+#   docker: "strimzi/strimzi-kafka-operator"
+
+social:
+  twitter: "https://twitter.com/strimziio"
+
+security:
+  policy:
+    path: "https://github.com/strimzi/.github/blob/main/SECURITY.md"
+  contact:
+    advisory_url: "https://github.com/strimzi/strimzi-kafka-operator/security/advisories/new"
+
+governance:
+  contributing:
+    path: "https://github.com/strimzi/.github/blob/main/CONTRIBUTING.md"
+  code_of_conduct:
+    path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/CODE_OF_CONDUCT.md"
+
+legal:
+  license:
+    path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/LICENSE"
+  identity_type:
+    has_dco: true # AUTO-DETECTED — please verify
+    has_cla: false # AUTO-DETECTED — please verify
+    dco_url:
+      path: "https://developercertificate.org/"
+
+documentation:
+  readme:
+    path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/README.md"
+
+landscape:
+  category: "App Definition and Development"
+  subcategory: "Streaming & Messaging"
+
+# CLOMonitor Score: 98/100
+# Documentation: 100 | License: 100 | Best Practices: 100 | Security: 86
