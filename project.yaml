@@ -1,28 +1,56 @@
 # .project metadata for Strimzi
 # Documentation: https://github.com/cncf/automation/tree/main/utilities/dot-project
 
-# TODO: Add package_managers if distributed via registries
-
 schema_version: "1.0.0"
 slug: "strimzi"
 name: "Strimzi"
 description: "Apache Kafka running on Kubernetes"
 type: "project"
-project_lead: "scholzj" # TODO: AUTO-DETECTED — please verify
-slack_channels: # TODO: AUTO-DETECTED — please verify the channel(s) below
+project_lead: "scholzj"
+slack_channels:
   - name: "#strimzi"
+    workspace: "cncf"
     link: "https://cloud-native.slack.com/messages/strimzi"
     primary: true
+  - name: "#strimzi-dev"
+    workspace: "cncf"
+    link: "https://cloud-native.slack.com/messages/strimzi-dev"
 
 maturity_log:
-  - phase: "incubating"
+  - phase: "sandbox"
     date: "2019-08-28T00:00:00Z"
-    issue: "https://github.com/cncf/toc/pull/939" # TODO: AUTO-DETECTED — please verify
+    issue: "https://github.com/cncf/toc/pull/266"
+  - phase: "incubating"
+    date: "2024-02-08T00:00:00Z"
+    issue: "https://github.com/cncf/toc/pull/842"
 
-repositories: # TODO: AUTO-DETECTED primary — please verify
+repositories:
   - url: "https://github.com/strimzi/strimzi-kafka-operator"
     primary: true
-    # tags: [core, sig-apps] # Optional
+  - url: "https://github.com/strimzi/strimzi-kafka-bridge"
+    tags: [component]
+  - url: "https://github.com/strimzi/strimzi-kafka-oauth"
+    tags: [component]
+  - url: "https://github.com/strimzi/metrics-reporter"
+    tags: [component]
+  - url: "https://github.com/strimzi/drain-cleaner"
+    tags: [tooling]
+  - url: "https://github.com/strimzi/kafka-access-operator"
+    tags: [component]
+  - url: "https://github.com/strimzi/strimzi-mqtt-bridge"
+    tags: [component]
+  - url: "https://github.com/strimzi/github-actions"
+    tags: [tooling]
+  - url: "https://github.com/strimzi/test-clients"
+    tags: [testing]
+  - url: "https://github.com/strimzi/test-container"
+    tags: [testing]
+  - url: "https://github.com/strimzi/governance"
+    tags: [governance]
+  - url: "https://github.com/strimzi/proposals"
+    tags: [governance]
+  - url: "https://github.com/strimzi/strimzi.github.io"
+    tags: [docs]
 
 website: "https://strimzi.io/"
 
@@ -31,38 +59,91 @@ artwork: "https://landscape.cncf.io/logos/strimzi.svg"
 adopters:
   path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/ADOPTERS.md"
 
+package_managers:
+  quay:
+    - "strimzi/operator"
+    - "strimzi/kafka"
+    - "strimzi/buildah"
+    - "strimzi/kaniko-executor"
+    - "strimzi/maven-builder"
+    - "strimzi/kafka-bridge"
+    - "strimzi/mqtt-bridge"
+    - "strimzi/drain-cleaner"
+    - "strimzi/access-operator"
+    - "strimzi-test-clients/test-clients"
+    - "strimzi-test-container/test-container"
+    - "strimzi-helm/strimzi-kafka-operator"
+    - "strimzi-helm/strimzi-access-operator"
+    - "strimzi-helm/strimzi-drain-cleaner"
 
-# TODO: Add package manager identifiers if your project is distributed via registries
-# package_managers:
-#   docker: "strimzi/strimzi-kafka-operator"
+  maven:
+    - "io.strimzi:api"
+    - "io.strimzi:crd-annotations"
+    - "io.strimzi:kafka-bridge"
+    - "io.strimzi:kafka-oauth-client"
+    - "io.strimzi:kafka-oauth-common"
+    - "io.strimzi:kafka-oauth-server"
+    - "io.strimzi:kafka-oauth-server-plain"
+    - "io.strimzi:kafka-oauth-keycloak-authorizer"
+    - "io.strimzi:metrics-reporter"
+    - "io.strimzi:strimzi-test-container"
+    - "io.strimzi:kafka-kubernetes-config-provider"
+    - "io.strimzi:kafka-quotas-plugin"
+
+mailing_lists:
+  - "cncf-strimzi-maintainers@lists.cncf.io"
+  - "cncf-strimzi-users@lists.cncf.io"
 
 social:
   twitter: "https://twitter.com/strimziio"
+  linkedin: "https://www.linkedin.com/company/strimzi/"
+  youtube: "https://www.youtube.com/@Strimzi"
 
 security:
   policy:
     path: "https://github.com/strimzi/.github/blob/main/SECURITY.md"
   contact:
-    advisory_url: "https://github.com/strimzi/strimzi-kafka-operator/security/advisories/new"
+    email: "cncf-strimzi-maintainers@lists.cncf.io"
 
 governance:
   contributing:
     path: "https://github.com/strimzi/.github/blob/main/CONTRIBUTING.md"
   code_of_conduct:
-    path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/CODE_OF_CONDUCT.md"
+    path: "https://github.com/strimzi/governance/blob/main/CODE_OF_CONDUCT.md"
+  governance_doc:
+    path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
+  vendor_neutrality_statement:
+    path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
+  roles_and_teams:
+    path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
+  change_process:
+    path: "https://github.com/strimzi/proposals"
+  contributor_guide:
+    path: "https://strimzi.io/contributing/"
+  maintainer_lifecycle:
+    onboarding_doc:
+      path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
+    progression_ladder:
+      path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
+    offboarding_policy:
+      path: "https://github.com/strimzi/governance/blob/main/GOVERNANCE.md"
 
 legal:
   license:
     path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/LICENSE"
   identity_type:
-    has_dco: true # AUTO-DETECTED — please verify
-    has_cla: false # AUTO-DETECTED — please verify
+    has_dco: true
+    has_cla: false
     dco_url:
       path: "https://developercertificate.org/"
 
 documentation:
   readme:
     path: "https://github.com/strimzi/strimzi-kafka-operator/blob/main/README.md"
+  support:
+    path: "https://github.com/strimzi/.github/blob/main/SUPPORT.md"
+  api:
+    path: "https://strimzi.io/documentation/"
 
 landscape:
   category: "App Definition and Development"
