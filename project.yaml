@@ -93,6 +93,7 @@ package_managers:
 mailing_lists:
   - "cncf-strimzi-maintainers@lists.cncf.io"
   - "cncf-strimzi-users@lists.cncf.io"
+  - "cncf-strimzi-dev@lists.cncf.io"
 
 social:
   twitter: "https://twitter.com/strimziio"
